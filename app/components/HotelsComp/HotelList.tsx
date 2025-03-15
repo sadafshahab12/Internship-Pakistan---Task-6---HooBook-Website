@@ -1,7 +1,10 @@
-import { HotelListTypes } from "@/app/data/data";
+"use client";
+import { useHotelContext } from "@/app/context/contextapi";
+import { HotelContextProps } from "@/app/data/dataTypes";
 import Image from "next/image";
 import React from "react";
 import { FaStar, FaStarHalf } from "react-icons/fa";
+import FilterHotel from "./FilterHotel";
 
 const HotelListing = () => {
   const renderStars = (rating: number) => {
@@ -24,11 +27,14 @@ const HotelListing = () => {
     }
     return stars;
   };
-  const []
+  const { filters, setFilters, filteredHotels } =
+    useHotelContext() as HotelContextProps;
+
   return (
     <section className="p-10">
+      <FilterHotel filters={filters} onFilterChange={setFilters} />
       <div className="grid grid-cols-3 gap-5 max-w-6xl mx-auto">
-        {HotelListTypes.map((hotel, index) => (
+        {filteredHotels.map((hotel, index) => (
           <div
             key={index}
             className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
@@ -40,6 +46,7 @@ const HotelListing = () => {
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 width={1000}
                 height={500}
+                priority
               />
             </div>
             <div className="p-6">

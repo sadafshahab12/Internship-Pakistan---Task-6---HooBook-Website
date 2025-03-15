@@ -143,7 +143,7 @@ export const HotelListTypes: HotelListType[] = [
     name: "The Ritz Paris",
     city: "Paris",
     country: "France",
-    image: "https://source.unsplash.com/600x400/?hotel,paris",
+    image: "https://images.pexels.com/photos/17394906/pexels-photo-17394906/free-photo-of-facade-of-ritz-paris-hotel.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2s",
     rating: 4.9,
     price_per_night: 450,
     amenities: ["Free Wi-Fi", "Spa", "Fine Dining"],
@@ -154,7 +154,7 @@ export const HotelListTypes: HotelListType[] = [
     name: "Burj Al Arab",
     city: "Dubai",
     country: "United Arab Emirates",
-    image: "https://source.unsplash.com/600x400/?hotel,dubai",
+    image: "https://secure.s.forbestravelguide.com/img/properties/four-seasons-resort-bali-at-jimbaran-bay/Property-FourSeasonsResortBaliatJimbaranBay-Hotel-GuestroomSuite-TwoBedroomPremierVillaRoom-FourSeasonsHotelsLimited.jpg",
     rating: 5.0,
     price_per_night: 1200,
     amenities: ["Private Beach", "Luxury Suites", "Helipad"],
@@ -304,15 +304,3 @@ export const HotelListTypes: HotelListType[] = [
     reviews: 960,
   },
 ];
-export type SortOption =
-  | "price-asc"
-  | "price-desc"
-  | "rating-desc"
-  | "reviews-desc";
-export interface FilterState {
-  minPrice: number;
-  maxPrice: number;
-  rating: number;
-  amneties: string;
-  sortBy: SortOption;
-}

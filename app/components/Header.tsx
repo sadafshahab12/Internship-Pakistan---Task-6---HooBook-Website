@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { CgClose } from "react-icons/cg";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
@@ -8,8 +7,6 @@ import { HiOutlineMenuAlt1 } from "react-icons/hi";
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
-
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -33,7 +30,7 @@ const Header = () => {
   }, []);
   return (
     <header
-      className={`bg-transparent flex-between h-16 px-5 sm:px-10 ${pathname === "/hotels" ? "text-white" : "text-charcoal"} fixed w-full z-50 ${
+      className={`bg-transparent flex-between h-16 px-5 sm:px-10 text-charcoal fixed w-full z-50 ${
         isScrolled
           ? "bg-white shadow-md text-charcoal"
           : "bg-transparent text-charcoal"
@@ -104,7 +101,9 @@ const Header = () => {
         </div>
       </nav>
       <div>
-        <button className={` text-12 font-medium py-1.5 px-3.5 cursor-pointer rounded-md  ${pathname === "/hotels" ? "text-charcoal bg-white" : "text-white bg-charcoal"}`}>
+        <button
+          className={` text-12 font-medium py-1.5 px-3.5 cursor-pointer rounded-md  bg-charcoal text-white`}
+        >
           Sign in
         </button>
       </div>
