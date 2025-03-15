@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Livvic } from "next/font/google";
+import {  Livvic } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import { HotelContextProvider } from "./context/contextapi";
 
 const livvic = Livvic({
   weight: ["400", "700"],
@@ -23,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${livvic.className} antialiased`}>
-        <Header />
-        {children}
+        <HotelContextProvider>
+          <Header />
+          {children}
+        </HotelContextProvider>
       </body>
     </html>
   );

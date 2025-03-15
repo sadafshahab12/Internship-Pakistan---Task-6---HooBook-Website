@@ -1,4 +1,8 @@
-import { FeaturedHotelType, PopularDestination } from "./dataTypes";
+import {
+  FeaturedHotelType,
+  HotelListType,
+  PopularDestination,
+} from "./dataTypes";
 
 export const featuredHotel: FeaturedHotelType[] = [
   {
@@ -133,7 +137,7 @@ export const popularDestination: PopularDestination[] = [
   },
 ];
 
-export const HotelList: HotelListType[] = [
+export const HotelListTypes: HotelListType[] = [
   {
     id: 1,
     name: "The Ritz Paris",
@@ -300,3 +304,15 @@ export const HotelList: HotelListType[] = [
     reviews: 960,
   },
 ];
+export type SortOption =
+  | "price-asc"
+  | "price-desc"
+  | "rating-desc"
+  | "reviews-desc";
+export interface FilterState {
+  minPrice: number;
+  maxPrice: number;
+  rating: number;
+  amneties: string;
+  sortBy: SortOption;
+}
