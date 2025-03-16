@@ -10,39 +10,48 @@ export const HotelContext = createContext<HotelContextProps | undefined>(
 export const HotelContextProvider = ({ children }: { children: ReactNode }) => {
   const [filters, setFilters] = useState<FilterState>({
     minPrice: 0,
-    maxPrice: 1000,
+    maxPrice: 1500,
     rating: 0,
     amenities: [],
     sortBy: "rating-desc",
   });
-
+  const hotels = HotelListTypes;
   const filteredHotels = useMemo(() => {
-    return HotelListTypes.filter((hotel) => {
+    return hotels.filter((hotel) => {
+      const minRoomPrice = hotel.room_types.reduce(
+        (min, room) => Math.min(min, room.price_per_night),
+        Infinity
+      );
       const matchesPrice =
-        hotel.price_per_night >= filters.minPrice &&
-        (filters.maxPrice === 0 || hotel.price_per_night <= filters.maxPrice);
+        minRoomPrice >= filters.minPrice &&
+        (filters.maxPrice === 0 || minRoomPrice <= filters.maxPrice);
+
       const matchesRating = hotel.rating >= filters.rating;
       const matchesAmenities =
-        hotel.amenities.length === 0 ||
+        filters.amenities.length === 0 ||
         filters.amenities.every((amenity) => hotel.amenities.includes(amenity));
       return matchesPrice && matchesRating && matchesAmenities;
     }).sort((a, b) => {
       switch (filters.sortBy) {
         case "price-asc":
-          return a.price_per_night - b.price_per_night;
+          return (
+            a.room_types[0].price_per_night - b.room_types[0].price_per_night
+          );
         case "price-desc":
-          return b.price_per_night - a.price_per_night;
+          return (
+            b.room_types[0].price_per_night - a.room_types[0].price_per_night
+          );
         case "rating-desc":
           return b.rating - a.rating;
         case "reviews-desc":
-          return a.reviews - b.reviews;
+          return b.reviews - a.reviews;
         default:
           return 0;
       }
     });
-  }, [filters]);
+  }, [filters , hotels]);
   return (
-    <HotelContext.Provider value={{ filters, setFilters, filteredHotels }}>
+    <HotelContext.Provider value={{hotels, filters, setFilters, filteredHotels }}>
       {children}
     </HotelContext.Provider>
   );

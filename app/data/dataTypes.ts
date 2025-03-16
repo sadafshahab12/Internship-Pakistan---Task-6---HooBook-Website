@@ -19,13 +19,21 @@ export interface PopularDestination {
 export interface HotelListType {
   id: number;
   name: string;
-  city: string;
-  country: string;
   image: string;
   rating: number;
-  price_per_night: number;
+  description: string;
+  location: {
+    city: string;
+    country: string;
+    address: string;
+  };
   amenities: string[];
   reviews: number;
+  room_types: {
+    type: string;
+    price_per_night: number;
+  }[];
+  book_now_url : string
 }
 export type SortOption =
   | "price-asc"
@@ -43,9 +51,11 @@ export interface FilterState {
 export interface FilterProps {
   filters: FilterState;
   onFilterChange: (filters: FilterState) => void;
+
 }
 export interface HotelContextProps {
   filters: FilterState;
   setFilters: React.Dispatch<React.SetStateAction<FilterState>>;
   filteredHotels: HotelListType[];
+  hotels: HotelListType[];
 }

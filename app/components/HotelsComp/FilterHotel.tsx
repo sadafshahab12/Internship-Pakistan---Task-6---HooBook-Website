@@ -22,13 +22,14 @@ const sortOption: { value: SortOption; label: string }[] = [
 ];
 
 const amenityOptions = [
-  "Luxury Spa",
+  "Free Wi-Fi",
+  "Spa",
   "Fine Dining",
-  "Luxury Suites",
-  "Skyline View",
-  "Oceanfront View",
-  "Harbor View",
+  "Luxury Spa",
+  "Fitness Center",
+  "Pool",
 ];
+
 const FilterHotel = ({ filters, onFilterChange }: FilterProps) => {
   return (
     <section>
@@ -53,7 +54,7 @@ const FilterHotel = ({ filters, onFilterChange }: FilterProps) => {
                     minPrice: Number(e.target.value),
                   })
                 }
-                className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 dark:bg-gray-700 dark:border-gray-600"
+                className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-charcoal dark:bg-gray-700 dark:border-gray-600"
                 placeholder="Min"
               />
               <span>-</span>
@@ -66,7 +67,7 @@ const FilterHotel = ({ filters, onFilterChange }: FilterProps) => {
                     maxPrice: Number(e.target.value),
                   })
                 }
-                className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 dark:bg-gray-700 dark:border-gray-600"
+                className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-charcoal dark:bg-gray-700 dark:border-gray-600"
                 placeholder="Max"
               />
             </div>
@@ -85,7 +86,7 @@ const FilterHotel = ({ filters, onFilterChange }: FilterProps) => {
               onChange={(e) =>
                 onFilterChange({ ...filters, rating: Number(e.target.value) })
               }
-              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-charcoal"
             />
             <div className="text-sm text-gray-600 dark:text-gray-400 mt-1">
               {filters.rating} stars
@@ -102,7 +103,7 @@ const FilterHotel = ({ filters, onFilterChange }: FilterProps) => {
                   sortBy: e.target.value as SortOption,
                 })
               }
-              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 dark:bg-gray-700 dark:border-gray-600"
+              className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-charcoal dark:bg-gray-700 dark:border-gray-600"
             >
               {sortOption.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -114,9 +115,9 @@ const FilterHotel = ({ filters, onFilterChange }: FilterProps) => {
 
           <div>
             <label className="block text-sm font-medium mb-2">Amenities</label>
-            <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-2">
               {amenityOptions.map((amenity) => (
-                <label key={amenity} className="inline-flex items-center">
+                <label key={amenity} className="inline-flex items-center ">
                   <input
                     type="checkbox"
                     checked={filters.amenities.includes(amenity)}
@@ -126,7 +127,7 @@ const FilterHotel = ({ filters, onFilterChange }: FilterProps) => {
                         : filters.amenities.filter((a) => a !== amenity);
                       onFilterChange({ ...filters, amenities: newAmenities });
                     }}
-                    className="rounded border-gray-300 text-emerald-600 shadow-sm focus:border-emerald-300 focus:ring focus:ring-emerald-200 focus:ring-opacity-50"
+                    className="rounded border-gray-300 text-charcoal shadow-sm "
                   />
                   <span className="ml-2 text-sm capitalize">{amenity}</span>
                 </label>

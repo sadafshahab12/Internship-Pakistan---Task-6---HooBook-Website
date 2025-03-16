@@ -5,8 +5,11 @@ import Image from "next/image";
 import React from "react";
 import { FaStar, FaStarHalf } from "react-icons/fa";
 import FilterHotel from "./FilterHotel";
+import { useRouter } from "next/navigation";
 
 const HotelListing = () => {
+  const router = useRouter();
+
   const renderStars = (rating: number) => {
     const stars = [];
     const fullStars = Math.floor(rating);
@@ -46,7 +49,6 @@ const HotelListing = () => {
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                 width={1000}
                 height={500}
-                priority
               />
             </div>
             <div className="p-6">
@@ -55,7 +57,7 @@ const HotelListing = () => {
                   {hotel.name}
                 </h3>
                 <span className="text-lg font-bold text-charcoal">
-                  ${hotel.price_per_night}
+                  ${hotel.room_types[0].price_per_night}
                   <span className="text-sm font-normal text-gray-500 dark:text-gray-400">
                     /night
                   </span>
@@ -63,7 +65,7 @@ const HotelListing = () => {
               </div>
 
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                {hotel.city}, {hotel.country}
+                {hotel.location.city}, {hotel.location.country}
               </p>
 
               <div className="flex items-center mb-4">
@@ -74,7 +76,7 @@ const HotelListing = () => {
               </div>
 
               <div className="flex flex-wrap gap-2 mb-4">
-                {hotel.amenities.map((amenity) => (
+                {hotel.amenities.slice(0, 3).map((amenity) => (
                   <div
                     key={amenity}
                     className="flex-left gap-2 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-12"
@@ -84,7 +86,10 @@ const HotelListing = () => {
                 ))}
               </div>
 
-              <button className="w-full bg-charcoal text-white font-medium py-2 px-4 rounded-lg duration-200 text-sm cursor-pointer active:scale-95 transition-all">
+              <button
+                onClick={() => router.push(`/hotels/${hotel.id}`)}
+                className="w-full bg-charcoal text-white font-medium py-2 px-4 rounded-lg duration-200 text-sm cursor-pointer active:scale-95 transition-all"
+              >
                 View Details
               </button>
             </div>
