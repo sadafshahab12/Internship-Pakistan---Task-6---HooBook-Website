@@ -23,6 +23,9 @@
   .flex-left {
     @apply flex items-center;
   }
+  .flex-mystart{
+    @apply flex justify-between items-start;
+  }
   .gradient-color {
     @apply bg-gradient-to-tr from-coral to-charcoal bg-clip-text text-transparent;
   }

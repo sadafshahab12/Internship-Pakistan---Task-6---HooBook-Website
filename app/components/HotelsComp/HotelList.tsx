@@ -6,6 +6,10 @@ import React from "react";
 import { FaStar, FaStarHalf } from "react-icons/fa";
 import FilterHotel from "./FilterHotel";
 import { useRouter } from "next/navigation";
+import SkeletonCard from "./SkeletonCard";
+
+
+
 
 const HotelListing = () => {
   const router = useRouter();
@@ -30,8 +34,22 @@ const HotelListing = () => {
     }
     return stars;
   };
-  const { filters, setFilters, filteredHotels } =
+
+  const { filters, setFilters, filteredHotels, loading } =
     useHotelContext() as HotelContextProps;
+
+  if (loading) {
+    return (
+      <section className="p-10">
+        <FilterHotel filters={filters} onFilterChange={setFilters} />
+        <div className="grid grid-cols-3 gap-5 max-w-6xl mx-auto">
+          {[...Array(6)].map((_, index) => (
+            <SkeletonCard key={index} />
+          ))}
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="p-10">

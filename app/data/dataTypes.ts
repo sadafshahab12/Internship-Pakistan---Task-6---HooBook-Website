@@ -57,5 +57,13 @@ export interface HotelContextProps {
   filters: FilterState;
   setFilters: React.Dispatch<React.SetStateAction<FilterState>>;
   filteredHotels: HotelListType[];
-  hotels: HotelListType[];
+  hotelData : HotelListType[];
+  loading : boolean
+}
+export interface User {
+  id: string;
+  name: string;
+  email: string;
+  avatar?: string;
+  role: 'user' | 'admin';
 }
