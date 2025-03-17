@@ -1,7 +1,7 @@
 "use client";
 
-import Header from "@/app/components/Header";
-import { HotelListType } from "@/app/data/dataTypes";
+import Header from "../../components/Header";
+import { HotelListType } from "../../data/dataTypes";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
@@ -39,8 +39,9 @@ const HotelDetailsPage = () => {
   const hotelId = Number(id);
   const hotel = hotelData.find((hotel) => hotel.id === hotelId);
   const router = useRouter();
-  const renderStars = (rating: number) => {
-    const stars = [];
+
+  const renderStars = (rating: number): React.ReactNode[] => {
+    const stars: React.ReactNode[] = []; // Explicit type
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 >= 0.5;
 
@@ -76,10 +77,8 @@ const HotelDetailsPage = () => {
   }
   return (
     <>
-
       <Header />
       <section className="pt-15">
-
         <header className="bg-charcoal text-white flex-between gap-5 py-3 px-6">
           <div className="flex-left gap-5 text-sm">
             <Link href={"/"}>Home</Link>
@@ -93,18 +92,18 @@ const HotelDetailsPage = () => {
             <p className="text-right">{hotel.location.city}</p>
           </div>
         </header>
-        <div className="max-w-6xl mx-auto py-8">
-          <div className="grid grid-cols-2 gap-8 items-center">
-            <div>
+        <div className="max-w-6xl mx-auto py-8 px-4">
+          <div className="grid grid-cols-1 mdl:grid-cols-2 justify-items-center gap-8 items-center">
+            <div className="order-2">
               <Image
                 src={hotel.image}
                 alt={hotel.name}
                 width={1000}
                 height={500}
-                className="w-150 h-100 rounded-lg"
+                className=" w-160 mdl:w-150 h-100 rounded-lg"
               />
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 w-full order-1">
               <div className="space-y-2">
                 <h1 className="text-4xl font-bold">{hotel.name}</h1>
                 <p className="text-12">{hotel.location.address}</p>
@@ -138,10 +137,11 @@ const HotelDetailsPage = () => {
                     onClick={() => handleRoomClick(index)}
                     className={` rounded-full py-2 px-4 cursor-pointer
                               transform transition-all duration-300 hover:scale-105
-                             ${selectedRoomIndex === index
-                        ? "bg-charcoal text-white"
-                        : "bg-gray-300 text-charcoal"
-                      }`}
+                             ${
+                               selectedRoomIndex === index
+                                 ? "bg-charcoal text-white"
+                                 : "bg-gray-300 text-charcoal"
+                             }`}
                   >
                     <div className="text-center">
                       <p className="font-medium text-12 flex-center gap-2">
@@ -151,10 +151,11 @@ const HotelDetailsPage = () => {
                       <div
                         className={`
                   overflow-hidden transition-all duration-300 flex-center gap-2
-                  ${selectedRoomIndex === index
-                            ? "max-h-20 opacity-100"
-                            : "max-h-0 opacity-0"
-                          }
+                  ${
+                    selectedRoomIndex === index
+                      ? "max-h-20 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }
                 `}
                       >
                         <p className="text-xl font-bold">
@@ -184,16 +185,18 @@ const HotelDetailsPage = () => {
                           hotel.location.country
                         )}&roomTypes=${encodeURIComponent(
                           hotel.room_types[selectedRoomIndex].type
-                        )}&pricePerNight=${hotel.room_types[selectedRoomIndex].price_per_night
+                        )}&pricePerNight=${
+                          hotel.room_types[selectedRoomIndex].price_per_night
                         }`
                       );
                     }
                   }}
                   disabled={selectedRoomIndex === null}
-                  className={`w-full bg-charcoal text-white text-sm py-2 rounded-lg cursor-pointer ${selectedRoomIndex !== null
+                  className={`w-full bg-charcoal text-white text-sm py-2 rounded-lg cursor-pointer ${
+                    selectedRoomIndex !== null
                       ? "bg-charcoal"
                       : "bg-gray-500 cursor-not-allowed"
-                    }`}
+                  }`}
                 >
                   Book Now
                 </button>

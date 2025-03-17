@@ -64,11 +64,14 @@ const BookingPage = () => {
   return (
     <>
       <Header />
-      <section className="pt-20">
-        <h1 className="text-2xl font-bold mb-10 text-center">
-          Booking Details
-        </h1>
-        <div className="max-w-6xl mx-auto grid grid-cols-2 gap-6">
+      <section className="pt-20 ">
+        <div className="h-30 sm:h-50 bg-charcoal flex-center">
+          <h1 className=" text-3xl sm:text-4xl font-bold  text-center text-white  ">
+            Booking Details
+          </h1>
+        </div>
+
+        <div className="max-w-6xl mx-auto flex mdl:flex-row flex-col gap-6 px-5 sm:px-10 py-10">
           {/* Booking Summary */}
           <div className="bg-gray-100 p-4 rounded-md space-y-4">
             <h2 className="text-xl font-semibold">{hotelName}</h2>
@@ -78,7 +81,7 @@ const BookingPage = () => {
                 alt={hotelName}
                 width={1000}
                 height={500}
-                className="rounded-md w-full h-80 object-cover"
+                className="rounded-md w-full mdl:w-100 h-auto mdl:h-60 object-cover"
               />
             ) : (
               <p>No image available</p>
@@ -105,7 +108,7 @@ const BookingPage = () => {
               placeholder="Full Name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-2 border rounded outline-none"
+              className="w-full p-2 border rounded outline-none text-sm"
               required
             />
             <input
@@ -114,7 +117,7 @@ const BookingPage = () => {
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-2 border rounded outline-none"
+              className="w-full p-2 border rounded outline-none text-sm"
               required
             />
             <input
@@ -123,7 +126,7 @@ const BookingPage = () => {
               placeholder="Phone Number"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full p-2 border rounded outline-none"
+              className="w-full p-2 border rounded outline-none text-sm"
               required
             />
             <input
@@ -132,7 +135,7 @@ const BookingPage = () => {
               min="1"
               value={formData.nights}
               onChange={handleChange}
-              className="w-full p-2 border rounded outline-none"
+              className="w-full p-2 border rounded outline-none text-sm"
               required
             />
 
@@ -143,7 +146,7 @@ const BookingPage = () => {
             <button
               type="submit"
               onClick={handleBookingConfirm}
-              className="w-full bg-blue-600 text-white py-2 rounded-lg cursor-pointer"
+              className="w-full bg-charcoal text-sm text-white py-2 rounded-lg cursor-pointer"
             >
               Confirm Booking
             </button>

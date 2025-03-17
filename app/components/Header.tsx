@@ -17,7 +17,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 150) {
+      if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -30,7 +30,7 @@ const Header = () => {
   }, []);
   return (
     <header
-      className={`bg-transparent flex-between h-16 px-5 sm:px-10 text-charcoal fixed w-full z-50 ${
+      className={`bg-white flex-between h-16 px-5 sm:px-10 text-charcoal fixed w-full z-50 ${
         isScrolled
           ? "bg-white shadow-md text-charcoal"
           : "bg-transparent text-charcoal"
@@ -61,6 +61,20 @@ const Header = () => {
           className="hover:font-bold transition-all duration-300 ease-in"
         >
           Booking{" "}
+        </Link>
+        <Link
+          href={"/user-dashboard"}
+          className="hover:font-bold transition-all duration-300 ease-in"
+          onClick={closeToggle}
+        >
+          User Dashboard{" "}
+        </Link>
+        <Link
+          href={"/admin-dahsboard"}
+          className="hover:font-bold transition-all duration-300 ease-in"
+          onClick={closeToggle}
+        >
+          Admin Dashboard{" "}
         </Link>
       </nav>
       {/* mobile menu  */}
@@ -98,15 +112,22 @@ const Header = () => {
           >
             Booking{" "}
           </Link>
+          <Link
+            href={"/user-dashboard"}
+            className="hover:font-bold transition-all duration-300 ease-in"
+            onClick={closeToggle}
+          >
+            User Dashboard{" "}
+          </Link>
+          <Link
+            href={"/admin-dahsboard"}
+            className="hover:font-bold transition-all duration-300 ease-in"
+            onClick={closeToggle}
+          >
+            Admin Dashboard{" "}
+          </Link>
         </div>
       </nav>
-      <div>
-        <button
-          className={` text-12 font-medium py-1.5 px-3.5 cursor-pointer rounded-md  bg-charcoal text-white`}
-        >
-          Sign in
-        </button>
-      </div>
     </header>
   );
 };
