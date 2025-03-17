@@ -31,7 +31,7 @@ export default function Profile() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto py-8">
+    <div className="max-w-2xl mx-auto pt-8">
       <h1 className="text-3xl font-bold text-gray-900 mb-8">
         Profile Settings
       </h1>

@@ -5,7 +5,7 @@ import HeroSection from "./HotelsComp/HeroSection";
 const HotelComp = () => {
   return (
     <div>
-      <HeroSection/>
+      <HeroSection />
       <HotelListing />
     </div>
   );

@@ -1,19 +1,27 @@
 "use client";
-import { useHotelContext } from "@/app/context/contextapi";
-import { HotelContextProps } from "@/app/data/dataTypes";
+
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { FaStar, FaStarHalf } from "react-icons/fa";
 import FilterHotel from "./FilterHotel";
 import { useRouter } from "next/navigation";
 import SkeletonCard from "./SkeletonCard";
-
-
-
+import { FilterState } from "@/app/data/dataTypes";
+import { HotelListTypes } from "@/app/data/data";
 
 const HotelListing = () => {
   const router = useRouter();
-
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1000); // Simulate data fetching delay
+  }, []);
+  const [filters, setFilters] = useState<FilterState>({
+    minPrice: 0,
+    maxPrice: 1500,
+    rating: 0,
+    amenities: [],
+    sortBy: "rating-desc",
+  });
   const renderStars = (rating: number) => {
     const stars = [];
     const fullStars = Math.floor(rating);
@@ -35,8 +43,40 @@ const HotelListing = () => {
     return stars;
   };
 
-  const { filters, setFilters, filteredHotels, loading } =
-    useHotelContext() as HotelContextProps;
+  const filteredHotels = useMemo(() => {
+    return HotelListTypes.filter((hotel) => {
+      const minRoomPrice = hotel.room_types.reduce(
+        (min, room) => Math.min(min, room.price_per_night),
+        Infinity
+      );
+      const matchesPrice =
+        minRoomPrice >= filters.minPrice &&
+        (filters.maxPrice === 0 || minRoomPrice <= filters.maxPrice);
+
+      const matchesRating = hotel.rating >= filters.rating;
+      const matchesAmenities =
+        filters.amenities.length === 0 ||
+        filters.amenities.every((amenity) => hotel.amenities.includes(amenity));
+      return matchesPrice && matchesRating && matchesAmenities;
+    }).sort((a, b) => {
+      switch (filters.sortBy) {
+        case "price-asc":
+          return (
+            a.room_types[0].price_per_night - b.room_types[0].price_per_night
+          );
+        case "price-desc":
+          return (
+            b.room_types[0].price_per_night - a.room_types[0].price_per_night
+          );
+        case "rating-desc":
+          return b.rating - a.rating;
+        case "reviews-desc":
+          return b.reviews - a.reviews;
+        default:
+          return 0;
+      }
+    });
+  }, [filters]);
 
   if (loading) {
     return (

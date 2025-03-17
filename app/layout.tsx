@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Livvic } from "next/font/google";
 import "./globals.css";
-
-
 const livvic = Livvic({
   weight: ["400", "700"],
   style: "normal",

@@ -55,6 +55,7 @@ export interface FilterProps {
 }
 export interface HotelContextProps {
   filters: FilterState;
+  onFilterChange: (filters: FilterState) => void;
   setFilters: React.Dispatch<React.SetStateAction<FilterState>>;
   filteredHotels: HotelListType[];
   hotelData : HotelListType[];

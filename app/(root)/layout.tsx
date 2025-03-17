@@ -1,16 +1,13 @@
-import Header from "@/app/components/Header";
-import { HotelContextProvider } from "@/app/context/contextapi";
 import React from "react";
+import Header from "../components/Header";
 
-const layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
-      <HotelContextProvider>
-        <Header />
-        {children}
-      </HotelContextProvider>
-    </div>
+    <>
+      <Header />
+      {children}
+    </>
   );
 };
 
-export default layout;
+export default Layout;
