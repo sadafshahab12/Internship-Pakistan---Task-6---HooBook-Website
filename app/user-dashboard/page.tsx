@@ -1,14 +1,12 @@
-"use client";
-
 import React from "react";
-import UserContent from "./components/UserContent";
 
-const UserDashboard = () => {
+
+const UserDashboardPage = () => {
   return (
     <div>
-      <UserContent />
+    hi
     </div>
   );
 };
 
-export default UserDashboard;
+export default UserDashboardPage;
