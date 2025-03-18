@@ -7,7 +7,7 @@ const SideBar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="h-full">
+    <div className=" h-full">
       <div className="sidenav bg-gray-100 h-full">
         <nav className="space-y-3 p-5">
           <Link

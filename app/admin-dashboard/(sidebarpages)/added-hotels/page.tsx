@@ -85,7 +85,7 @@ const AddedHotels = () => {
   };
 
   return (
-    <section className="p-5 h-full">
+    <section className="p-5 h-screen">
       <h1 className="text-2xl font-bold mb-5">Added Hotels</h1>
       <div>
         <h2 className="text-lg font-semibold">Recently Added Hotels</h2>

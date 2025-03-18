@@ -30,7 +30,7 @@ const AllBookings = () => {
   }, []);
 
   return (
-    <section className="py-10 px-5 h-full">
+    <section className="py-10 px-5 h-screen">
       <h1 className="text-2xl font-bold mb-5 text-center">All Bookings</h1>
       {bookings.length > 0 ? (
         <div className="grid grid-cols-2 gap-5">
