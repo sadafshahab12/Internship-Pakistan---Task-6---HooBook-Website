@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineBedroomChild } from "react-icons/md";
 import Header from "../components/Header";
@@ -182,4 +182,11 @@ const BookingPage = () => {
   );
 };
 
-export default BookingPage;
+
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BookingPage />
+    </Suspense>
+  );
+}
