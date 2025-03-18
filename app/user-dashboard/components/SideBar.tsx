@@ -11,6 +11,16 @@ const SideBar = () => {
       <div className="sidenav bg-gray-100 h-full">
         <nav className="space-y-3 p-5">
           <Link
+            href="/user-dashboard"
+            className={`py-3 px-4 w-full block  text-sm rounded-md ${
+              pathname === "/user-dashboard"
+                ? "bg-gray-300 text-charcoal border-2  border-charcoal"
+                : "bg-charcoal text-white"
+            }`}
+          >
+            Dashboard
+          </Link>
+          <Link
             href="/user-dashboard/curr-book"
             className={`py-3 px-4 w-full block  text-sm rounded-md ${
               pathname === "/user-dashboard/curr-book"
