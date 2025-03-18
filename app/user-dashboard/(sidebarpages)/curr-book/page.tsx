@@ -59,7 +59,7 @@ const CurrentBooking = () => {
   };
 
   return (
-    <section className="pt-10 px-5">
+    <section className="py-10 px-5 h-screen">
       <h1 className="text-2xl font-bold mb-5 text-center">Your Bookings</h1>
       <div className="max-w-6xl mx-auto grid grid-cols-2 gap-5">
         {bookings.length > 0 ? (

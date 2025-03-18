@@ -7,39 +7,30 @@ const SideBar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="h-screen">
+    <div className="h-full">
       <div className="sidenav bg-gray-100 h-full">
         <nav className="space-y-3 p-5">
           <Link
-            href="/user-dashboard/curr-book"
+            href="/admin-dashboard/added-hotels"
             className={`py-3 px-4 w-full block  text-sm rounded-md ${
-              pathname === "/user-dashboard/curr-book"
+              pathname === "/admin-dashboard/added-hotels"
                 ? "bg-gray-300 text-charcoal border-2  border-charcoal"
                 : "bg-charcoal text-white"
             }`}
           >
-            Current Booking
+           Added Hotels
           </Link>
           <Link
-            href="/user-dashboard/past-book"
+            href="/admin-dashboard/all-book"
             className={`py-3 px-4 w-full block  text-sm rounded-md ${
-              pathname === "/user-dashboard/past-book"
+              pathname === "/admin-dashboard/all-book"
                 ? "bg-gray-300 text-charcoal border-2  border-charcoal"
                 : "bg-charcoal text-white"
             }`}
           >
-            Past Booking
+           View All Booking
           </Link>
-          <Link
-            href="/user-dashboard/profile"
-            className={`py-3 px-4 w-full block  text-sm rounded-md ${
-              pathname === "/user-dashboard/profile"
-                ? "bg-gray-300 text-charcoal border-2  border-charcoal"
-                : "bg-charcoal text-white"
-            }`}
-          >
-            Profile Settings
-          </Link>
+      
         </nav>
       </div>
     </div>

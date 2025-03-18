@@ -94,7 +94,7 @@ const HotelDetailsPage = () => {
         </header>
         <div className="max-w-6xl mx-auto py-8 px-4">
           <div className="grid grid-cols-1 mdl:grid-cols-2 justify-items-center gap-8 items-center">
-            <div className="order-2">
+            <div className="order-1">
               <Image
                 src={hotel.image}
                 alt={hotel.name}
@@ -103,7 +103,7 @@ const HotelDetailsPage = () => {
                 className=" w-160 mdl:w-150 h-100 rounded-lg"
               />
             </div>
-            <div className="space-y-4 w-full order-1">
+            <div className="space-y-4 w-full order-2">
               <div className="space-y-2">
                 <h1 className="text-4xl font-bold">{hotel.name}</h1>
                 <p className="text-12">{hotel.location.address}</p>

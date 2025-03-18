@@ -1,20 +1,25 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { JSX, useEffect, useMemo, useState } from "react";
 import { FaStar, FaStarHalf } from "react-icons/fa";
 import FilterHotel from "./FilterHotel";
 import { useRouter } from "next/navigation";
 import SkeletonCard from "./SkeletonCard";
-import { FilterState } from "@/app/data/dataTypes";
-import { HotelListTypes } from "@/app/data/data";
+import { FilterState } from "../../data/dataTypes";
+import { HotelListTypes } from "../../data/data";
+import { MdOutlineClose } from "react-icons/md";
+import { BiFilterAlt } from "react-icons/bi";
 
 const HotelListing = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
+  const [isFilterOpen, setIsFilterOpen] = useState(false); // State to toggle filter panel
+
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000); // Simulate data fetching delay
   }, []);
+
   const [filters, setFilters] = useState<FilterState>({
     minPrice: 0,
     maxPrice: 1500,
@@ -22,8 +27,9 @@ const HotelListing = () => {
     amenities: [],
     sortBy: "rating-desc",
   });
-  const renderStars = (rating: number) => {
-    const stars = [];
+
+  const renderStars = (rating: number): JSX.Element[] => {
+    const stars: JSX.Element[] = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 >= 0.5;
 
@@ -32,6 +38,7 @@ const HotelListing = () => {
         <FaStar key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
       );
     }
+
     if (hasHalfStar) {
       stars.push(
         <FaStarHalf
@@ -92,9 +99,34 @@ const HotelListing = () => {
   }
 
   return (
-    <section className="p-10">
-      <FilterHotel filters={filters} onFilterChange={setFilters} />
-      <div className="grid grid-cols-3 gap-5 max-w-6xl mx-auto">
+    <section className="px-5 py-20 md:py-10 grid grid-cols-1 md:grid-cols-3 gap-5 relative">
+      {/* Filter Button for Small Screens */}
+      <button
+        className="md:hidden absolute top-5 left-5 bg-gray-800 text-white p-3 rounded-full shadow-lg z-10 cursor-pointer"
+        onClick={() => setIsFilterOpen(true)}
+      >
+        <BiFilterAlt className="w-5 h-5" />
+      </button>
+
+      {/* Filter Panel */}
+      <div
+        className={`fixed md:relative top-0 left-0 w-3/4  md:w-full bg-white dark:bg-gray-800  transition-transform h-full md:h-auto overflow-y-auto duration-300 z-50 md:z-10 shadow-lg ${
+          isFilterOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+        }`}
+      >
+        {/* Close button for mobile */}
+        <button
+          className="md:hidden absolute top-4 right-4 text-gray-600 dark:text-white text-xl cursor-pointer"
+          onClick={() => setIsFilterOpen(false)}
+        >
+          <MdOutlineClose />
+        </button>
+
+        <FilterHotel filters={filters} onFilterChange={setFilters} />
+      </div>
+
+      {/* Hotel Listings */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-6xl mx-auto col-span-2">
         {filteredHotels.map((hotel, index) => (
           <div
             key={index}

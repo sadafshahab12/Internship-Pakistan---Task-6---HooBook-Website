@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
+import { MdAnalytics } from "react-icons/md";
 import {
   BarChart,
   Bar,
@@ -36,8 +37,8 @@ const UserDashboardPage = () => {
     { name: "Past Bookings", count: pastBookingCount },
   ];
   return (
-    <div className="p-5">
-      <h1 className="text-2xl font-bold text-center">User Dashboard</h1>
+    <div className="p-5 ">
+      <h1 className="text-3xl font-bold flex-left gap-4 ">Analytics <MdAnalytics className="w-6 h-6" /></h1>
       <div className="flex-center gap-4 mt-4">
         <p className="text-lg h-50 w-full flex-center flex-col bg-gray-200 rounded-md gap-3">
           <Image
@@ -62,9 +63,9 @@ const UserDashboardPage = () => {
       </div>
       <div className="p-5 grid grid-cols-2">
         <div>
-          <h1 className="text-2xl font-bold text-center"> Booking Overview</h1>
+          <h1 className="text-xl font-bold text-center"> Booking Overview</h1>
           <div className="flex flex-col items-center mt-5">
-            <ResponsiveContainer width="80%" height={300}>
+            <ResponsiveContainer width="80%" height={250}>
               <BarChart data={data}>
                 <XAxis dataKey="name" />
                 <YAxis />
@@ -78,7 +79,7 @@ const UserDashboardPage = () => {
         {/* Pie Chart */}
         <div className="flex flex-col items-center">
           <h2 className="text-xl font-semibold mb-3"> Bookings Pie Chart</h2>
-          <ResponsiveContainer width="100%" height={300}>
+          <ResponsiveContainer width="100%" height={250}>
             <PieChart>
               <Pie
                 data={data}

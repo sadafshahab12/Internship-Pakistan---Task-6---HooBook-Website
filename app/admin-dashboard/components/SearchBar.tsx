@@ -13,7 +13,7 @@ const SearchBar = () => {
         >
           <HiMiniArrowLongLeft />
         </Link>
-        <h1 className="font-bold text-2xl">User Dashbaord</h1>
+        <h1 className="font-bold text-2xl">Admin Dashbaord</h1>
       </div>
       <div className="flex-left gap-4 border px-4 rounded-md w-full">
         <input

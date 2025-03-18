@@ -33,12 +33,10 @@ const BookingPage = () => {
   const handleBookingConfirm = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Get previous bookings from localStorage
     const previousBookings = JSON.parse(
       localStorage.getItem("bookings") || "[]"
     );
 
-    // Add new booking
     const newBooking = {
       hotelName,
       roomType,
@@ -53,24 +51,48 @@ const BookingPage = () => {
       phone: formData.phone,
     };
 
-    // Save updated bookings list in localStorage
     const updatedBookings = [...previousBookings, newBooking];
     localStorage.setItem("bookings", JSON.stringify(updatedBookings));
 
-    // Navigate to Current Booking page
     router.push(`/user-dashboard/curr-book`);
   };
 
   return (
     <>
       <Header />
-      <section className="pt-20 ">
-        <div className="h-30 sm:h-50 bg-charcoal flex-center">
-          <h1 className=" text-3xl sm:text-4xl font-bold  text-center text-white  ">
-            Booking Details
-          </h1>
+
+      {/* Booking Details Section with Background Video */}
+      <section className="relative w-full pt-16">
+        <div className="relative h-40 sm:h-100 flex items-center justify-center text-center ">
+          {/* Background Video */}
+          <video
+            autoPlay
+            loop
+            muted
+            className="absolute top-0 left-0 w-full h-full object-cover"
+          >
+            <source
+              src="https://cdn.pixabay.com/video/2016/09/05/4952-181538531_large.mp4"
+              type="video/mp4"
+            />
+          </video>
+
+          {/* Overlay for readability */}
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
+
+          {/* Heading */}
+          <div className="relative z-10  text-white max-w-3xl mx-auto space-y-3">
+            <h1 className="text-3xl sm:text-5xl font-bold">
+              Secure Your Stay, Embrace the Experience
+            </h1>
+            <p className="text-xl">
+              Effortless booking, exceptional stays—your perfect getaway starts
+              here.
+            </p>
+          </div>
         </div>
 
+        {/* Main Booking Content */}
         <div className="max-w-6xl mx-auto flex mdl:flex-row flex-col gap-6 px-5 sm:px-10 py-10">
           {/* Booking Summary */}
           <div className="bg-gray-100 p-4 rounded-md space-y-4">
@@ -100,7 +122,7 @@ const BookingPage = () => {
           </div>
 
           {/* Booking Form */}
-          <form className="space-y-4">
+          <form className="space-y-4 bg-white p-6 rounded-md shadow-lg">
             <h1 className="text-xl font-bold">Customer Details</h1>
             <input
               type="text"
@@ -108,7 +130,7 @@ const BookingPage = () => {
               placeholder="Full Name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full p-2 border rounded outline-none text-sm"
+              className="w-full py-3 px-4 border rounded outline-none text-sm"
               required
             />
             <input
@@ -117,7 +139,7 @@ const BookingPage = () => {
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full p-2 border rounded outline-none text-sm"
+              className="w-full py-3 px-4 border rounded outline-none text-sm"
               required
             />
             <input
@@ -126,7 +148,7 @@ const BookingPage = () => {
               placeholder="Phone Number"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full p-2 border rounded outline-none text-sm"
+              className="w-full py-3 px-4 border rounded outline-none text-sm"
               required
             />
             <input
@@ -135,7 +157,7 @@ const BookingPage = () => {
               min="1"
               value={formData.nights}
               onChange={handleChange}
-              className="w-full p-2 border rounded outline-none text-sm"
+              className="w-full py-3 px-4 border rounded outline-none text-sm"
               required
             />
 
@@ -146,7 +168,7 @@ const BookingPage = () => {
             <button
               type="submit"
               onClick={handleBookingConfirm}
-              className="w-full bg-charcoal text-sm text-white py-2 rounded-lg cursor-pointer"
+              className="w-full bg-charcoal text-sm text-white py-3 rounded-lg cursor-pointer"
             >
               Confirm Booking
             </button>

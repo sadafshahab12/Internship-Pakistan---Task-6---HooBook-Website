@@ -5,7 +5,6 @@
   --color-sunset: #ffc107;
   --color-charcoal: #2c2c2c;
   --text-12: 12px;
-  --text-12: 12px;
   --text-14: 14px;
   --breakpoint-xxxs: 22rem; /*335px*/
   --breakpoint-xxs: 27rem; /*435px*/
@@ -45,11 +44,4 @@
   background-attachment: fixed;
 
 }
-.hotel-bg-image {
-  background-image: url("https://images.pexels.com/photos/2507010/pexels-photo-2507010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 
-}

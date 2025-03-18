@@ -30,7 +30,7 @@ const Header = () => {
   }, []);
   return (
     <header
-      className={`bg-white flex-between h-16 px-5 sm:px-10 text-charcoal fixed w-full z-50 ${
+      className={`bg-white flex-between h-16 px-5 md:px-10 text-charcoal fixed w-full shadow-md z-50 ${
         isScrolled
           ? "bg-white shadow-md text-charcoal"
           : "bg-transparent text-charcoal"
@@ -43,7 +43,7 @@ const Header = () => {
         />
         <h1 className="text-2xl sm:text-3xl font-bold  ">HooBook</h1>
       </div>
-      <nav className="space-x-14 text-sm sm:block hidden">
+      <nav className="space-x-6 md:space-x-8 mdl:space-x-14 text-sm sm:block hidden">
         <Link
           href={"/"}
           className="hover:font-bold transition-all duration-300 ease-in"
@@ -70,7 +70,7 @@ const Header = () => {
           User Dashboard{" "}
         </Link>
         <Link
-          href={"/admin-dahsboard"}
+          href={"/admin-dashboard"}
           className="hover:font-bold transition-all duration-300 ease-in"
           onClick={closeToggle}
         >

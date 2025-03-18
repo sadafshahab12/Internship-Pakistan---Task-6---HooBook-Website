@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 
 import Image from "next/image";
 import { FaCamera } from "react-icons/fa";
-import { User } from "@/app/data/dataTypes";
+import { User } from "../../../data/dataTypes";
 
 const mockUser: User = {
   id: "u1",
