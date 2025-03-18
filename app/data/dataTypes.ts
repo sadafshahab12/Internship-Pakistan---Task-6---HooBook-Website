@@ -32,8 +32,13 @@ export interface HotelListType {
   room_types: {
     type: string;
     price_per_night: number;
+    max_guests: number;
+    availability: {
+      check_in: string;
+      check_out: string;
+    }[];
   }[];
-  book_now_url : string
+  book_now_url: string;
 }
 export type SortOption =
   | "price-asc"
@@ -51,20 +56,19 @@ export interface FilterState {
 export interface FilterProps {
   filters: FilterState;
   onFilterChange: (filters: FilterState) => void;
-
 }
 export interface HotelContextProps {
   filters: FilterState;
   onFilterChange: (filters: FilterState) => void;
   setFilters: React.Dispatch<React.SetStateAction<FilterState>>;
   filteredHotels: HotelListType[];
-  hotelData : HotelListType[];
-  loading : boolean
+  hotelData: HotelListType[];
+  loading: boolean;
 }
 export interface User {
   id: string;
   name: string;
   email: string;
   avatar?: string;
-  role: 'user' | 'admin';
+  role: "user" | "admin";
 }

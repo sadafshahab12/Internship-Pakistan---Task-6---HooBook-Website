@@ -10,6 +10,7 @@ import { FaStar, FaStarHalf } from "react-icons/fa";
 
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineBedroomChild } from "react-icons/md";
+import Loader from "../../components/Loader";
 
 const HotelDetailsPage = () => {
   const { id } = useParams();
@@ -66,7 +67,12 @@ const HotelDetailsPage = () => {
   };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Header />
+        <Loader />
+      </div>
+    );
   }
   if (!hotel) {
     return (

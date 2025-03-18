@@ -159,14 +159,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Deluxe Room",
         price_per_night: 450,
+        max_guests: 2,
+        availability: [
+          { check_in: "2025-04-02", check_out: "2025-04-06" },
+          { check_in: "2025-04-12", check_out: "2025-04-16" },
+        ],
       },
       {
         type: "Executive Suite",
         price_per_night: 850,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-04-04", check_out: "2025-04-09" },
+          { check_in: "2025-04-18", check_out: "2025-04-23" },
+        ],
       },
       {
         type: "Presidential Suite",
         price_per_night: 2500,
+        max_guests: 5,
+        availability: [
+          { check_in: "2025-04-07", check_out: "2025-04-12" },
+          { check_in: "2025-04-22", check_out: "2025-04-28" },
+        ],
       },
     ],
     amenities: [
@@ -181,7 +196,6 @@ export const HotelListTypes: HotelListType[] = [
     reviews: 1020,
     book_now_url: "https://www.ritzparis.com/en",
   },
-
   {
     id: 2,
     name: "Burj Al Arab",
@@ -198,14 +212,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Deluxe One-Bedroom Suite",
         price_per_night: 1200,
+        max_guests: 2,
+        availability: [
+          { check_in: "2025-05-01", check_out: "2025-05-05" },
+          { check_in: "2025-05-10", check_out: "2025-05-15" },
+        ],
       },
       {
         type: "Panoramic Suite",
         price_per_night: 2500,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-05-03", check_out: "2025-05-08" },
+          { check_in: "2025-05-18", check_out: "2025-05-23" },
+        ],
       },
       {
         type: "Royal Two-Bedroom Suite",
         price_per_night: 5000,
+        max_guests: 5,
+        availability: [
+          { check_in: "2025-05-07", check_out: "2025-05-12" },
+          { check_in: "2025-05-25", check_out: "2025-05-30" },
+        ],
       },
     ],
     amenities: [
@@ -227,7 +256,8 @@ export const HotelListTypes: HotelListType[] = [
   {
     id: 3,
     name: "The Plaza",
-    image: "https://res.cloudinary.com/grand-luxury/image/upload/w_1920/remote_glh/original/75534-root-exteriors-front-door.jpg",
+    image:
+      "https://res.cloudinary.com/grand-luxury/image/upload/w_1920/remote_glh/original/75534-root-exteriors-front-door.jpg",
     description:
       "The Plaza is an iconic luxury hotel in New York City, offering timeless elegance, world-class service, and breathtaking views of Central Park. With opulent suites, a renowned spa, and top-tier dining, it provides an unforgettable experience in the heart of Manhattan.",
     location: {
@@ -239,14 +269,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Deluxe King Room",
         price_per_night: 550,
+        max_guests: 2,
+        availability: [
+          { check_in: "2025-04-01", check_out: "2025-04-05" },
+          { check_in: "2025-04-10", check_out: "2025-04-15" },
+        ],
       },
       {
         type: "Terrace Suite",
         price_per_night: 1200,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-04-03", check_out: "2025-04-08" },
+          { check_in: "2025-04-12", check_out: "2025-04-18" },
+        ],
       },
       {
         type: "Royal Plaza Suite",
         price_per_night: 3500,
+        max_guests: 5,
+        availability: [
+          { check_in: "2025-04-05", check_out: "2025-04-10" },
+          { check_in: "2025-04-20", check_out: "2025-04-25" },
+        ],
       },
     ],
     amenities: [
@@ -262,11 +307,11 @@ export const HotelListTypes: HotelListType[] = [
     reviews: 1340,
     book_now_url: "https://www.theplazany.com/",
   },
-
   {
     id: 4,
     name: "Aman Tokyo",
-    image: "https://harpersbazaaruk.cdnds.net/17/17/2560x1706/gallery-1493044604-lobby.jpg",
+    image:
+      "https://harpersbazaaruk.cdnds.net/17/17/2560x1706/gallery-1493044604-lobby.jpg",
     description:
       "Aman Tokyo is a tranquil urban sanctuary that blends traditional Japanese aesthetics with modern luxury. Offering breathtaking skyline views, a serene Zen garden, and an infinity pool, it provides an exclusive retreat in the heart of Tokyo.",
     location: {
@@ -279,14 +324,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Deluxe Room",
         price_per_night: 750,
+        max_guests: 2,
+        availability: [
+          { check_in: "2025-05-02", check_out: "2025-05-07" },
+          { check_in: "2025-05-12", check_out: "2025-05-16" },
+        ],
       },
       {
         type: "Corner Suite",
         price_per_night: 1500,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-05-04", check_out: "2025-05-10" },
+          { check_in: "2025-05-18", check_out: "2025-05-22" },
+        ],
       },
       {
         type: "Aman Suite",
         price_per_night: 3000,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-05-06", check_out: "2025-05-11" },
+          { check_in: "2025-05-22", check_out: "2025-05-28" },
+        ],
       },
     ],
     amenities: [
@@ -303,11 +363,11 @@ export const HotelListTypes: HotelListType[] = [
     reviews: 920,
     book_now_url: "https://www.aman.com/resorts/aman-tokyo",
   },
-
   {
     id: 5,
     name: "The Peninsula Bangkok",
-    image: "https://www.peninsula.com/en/-/media/images/bangkok/new/rooms/the-peninsula-bangkok_exterior-night-(2).jpg?mw=905&hash=2A8F54E2BF2134C3E2060D4234177488",
+    image:
+      "https://www.peninsula.com/en/-/media/images/bangkok/new/rooms/the-peninsula-bangkok_exterior-night-(2).jpg?mw=905&hash=2A8F54E2BF2134C3E2060D4234177488",
     description:
       "The Peninsula Bangkok offers a luxurious riverside retreat with world-class hospitality and stunning views of the Chao Phraya River. Featuring elegant accommodations, award-winning Thai cuisine, and a serene spa, it is the perfect escape in the heart of Bangkok.",
     location: {
@@ -320,14 +380,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Deluxe Room",
         price_per_night: 320,
+        max_guests: 2,
+        availability: [
+          { check_in: "2025-06-01", check_out: "2025-06-06" },
+          { check_in: "2025-06-10", check_out: "2025-06-14" },
+        ],
       },
       {
         type: "Grand Balcony Suite",
         price_per_night: 650,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-06-03", check_out: "2025-06-09" },
+          { check_in: "2025-06-15", check_out: "2025-06-20" },
+        ],
       },
       {
         type: "The Peninsula Suite",
         price_per_night: 2200,
+        max_guests: 5,
+        availability: [
+          { check_in: "2025-06-05", check_out: "2025-06-11" },
+          { check_in: "2025-06-25", check_out: "2025-07-01" },
+        ],
       },
     ],
     amenities: [
@@ -348,7 +423,8 @@ export const HotelListTypes: HotelListType[] = [
   {
     id: 6,
     name: "Four Seasons Bali",
-    image: "https://i.ytimg.com/vi/kcPrHQXPSJw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDO7njVmnDl0gGcqjhthleJe_3p_Q",
+    image:
+      "https://i.ytimg.com/vi/kcPrHQXPSJw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDO7njVmnDl0gGcqjhthleJe_3p_Q",
     description:
       "Nestled in the heart of Bali, Four Seasons offers an exquisite blend of tropical luxury and Balinese tradition. With private villas, breathtaking oceanfront views, and a world-class wellness spa, it provides an idyllic retreat for travelers seeking serenity and sophistication.",
     location: {
@@ -360,14 +436,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Garden Villa",
         price_per_night: 600,
+        max_guests: 2,
+        availability: [
+          { check_in: "2025-06-05", check_out: "2025-06-10" },
+          { check_in: "2025-06-15", check_out: "2025-06-20" },
+        ],
       },
       {
         type: "Oceanfront Suite",
         price_per_night: 1200,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-06-07", check_out: "2025-06-12" },
+          { check_in: "2025-06-18", check_out: "2025-06-23" },
+        ],
       },
       {
         type: "Royal Three-Bedroom Villa",
         price_per_night: 3500,
+        max_guests: 6,
+        availability: [
+          { check_in: "2025-06-10", check_out: "2025-06-15" },
+          { check_in: "2025-06-25", check_out: "2025-07-01" },
+        ],
       },
     ],
     amenities: [
@@ -384,11 +475,11 @@ export const HotelListTypes: HotelListType[] = [
     reviews: 1150,
     book_now_url: "https://www.fourseasons.com/jimbaranbay/",
   },
-
   {
     id: 7,
     name: "The Savoy",
-    image: "https://images.suitcasemag.com/wp-content/uploads/2023/10/10170632/the-savoy-london_6532950dc79c2.jpeg",
+    image:
+      "https://images.suitcasemag.com/wp-content/uploads/2023/10/10170632/the-savoy-london_6532950dc79c2.jpeg",
     description:
       "The Savoy is one of London's most prestigious hotels, offering a blend of historic charm and modern luxury. Located in the heart of the theatre district, it provides world-class fine dining, elegant accommodations, and exceptional service.",
     location: {
@@ -400,14 +491,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Luxury King Room",
         price_per_night: 480,
+        max_guests: 2,
+        availability: [
+          { check_in: "2025-07-03", check_out: "2025-07-08" },
+          { check_in: "2025-07-12", check_out: "2025-07-16" },
+        ],
       },
       {
         type: "River View Suite",
         price_per_night: 950,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-07-05", check_out: "2025-07-10" },
+          { check_in: "2025-07-18", check_out: "2025-07-23" },
+        ],
       },
       {
         type: "Royal Suite",
         price_per_night: 3500,
+        max_guests: 5,
+        availability: [
+          { check_in: "2025-07-08", check_out: "2025-07-13" },
+          { check_in: "2025-07-25", check_out: "2025-07-30" },
+        ],
       },
     ],
     amenities: [
@@ -424,7 +530,6 @@ export const HotelListTypes: HotelListType[] = [
     reviews: 970,
     book_now_url: "https://www.thesavoylondon.com/",
   },
-
   {
     id: 8,
     name: "Raffles Singapore",
@@ -440,14 +545,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Courtyard Suite",
         price_per_night: 680,
+        max_guests: 2,
+        availability: [
+          { check_in: "2025-08-01", check_out: "2025-08-06" },
+          { check_in: "2025-08-12", check_out: "2025-08-16" },
+        ],
       },
       {
         type: "Palm Court Suite",
         price_per_night: 1200,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-08-04", check_out: "2025-08-09" },
+          { check_in: "2025-08-18", check_out: "2025-08-23" },
+        ],
       },
       {
         type: "Presidential Suite",
         price_per_night: 4200,
+        max_guests: 6,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-25", check_out: "2025-08-30" },
+        ],
       },
     ],
     amenities: [
@@ -468,7 +588,8 @@ export const HotelListTypes: HotelListType[] = [
   {
     id: 9,
     name: "Hotel de Russie",
-    image: "https://www.travelandleisure.com/thmb/Sp5c-hY03EDOex4fky2MWvfj-1s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-header-exterior-hotel-de-russie-BESTROMEHTL0324-c13230e4dc4c48659a598f6f75198d7a.jpg",
+    image:
+      "https://www.travelandleisure.com/thmb/Sp5c-hY03EDOex4fky2MWvfj-1s=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-header-exterior-hotel-de-russie-BESTROMEHTL0324-c13230e4dc4c48659a598f6f75198d7a.jpg",
     description:
       "Hotel de Russie is a luxurious oasis in the heart of Rome, offering an exquisite blend of classical elegance and modern comfort. Featuring a serene private garden, a world-class spa, and a Michelin-starred restaurant, it provides a refined retreat near the city's historic landmarks.",
     location: {
@@ -480,14 +601,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Classic Room",
         price_per_night: 410,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-06-05", check_out: "2025-06-10" },
+          { check_in: "2025-06-15", check_out: "2025-06-20" },
+        ],
       },
       {
         type: "Garden View Suite",
         price_per_night: 900,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-06-07", check_out: "2025-06-12" },
+          { check_in: "2025-06-18", check_out: "2025-06-23" },
+        ],
       },
       {
         type: "Nijinsky Suite",
         price_per_night: 4500,
+        max_guests: 2,
+        availability: [
+          { check_in: "2025-06-10", check_out: "2025-06-15" },
+          { check_in: "2025-06-25", check_out: "2025-07-01" },
+        ],
       },
     ],
     amenities: [
@@ -505,11 +641,11 @@ export const HotelListTypes: HotelListType[] = [
     book_now_url:
       "https://www.roccofortehotels.com/hotels-and-resorts/hotel-de-russie/",
   },
-
   {
     id: 10,
     name: "Mandarin Oriental Hong Kong",
-    image: "https://assets-us-01.kc-usercontent.com/9e9a95c0-1d15-00d5-e878-50f070203f13/57876dcf-1d10-432e-8d39-e7001c93c6c6/MO-Exterior.jpg",
+    image:
+      "https://assets-us-01.kc-usercontent.com/9e9a95c0-1d15-00d5-e878-50f070203f13/57876dcf-1d10-432e-8d39-e7001c93c6c6/MO-Exterior.jpg",
     description:
       "Mandarin Oriental Hong Kong is an iconic luxury hotel, blending timeless elegance with modern sophistication. Overlooking Victoria Harbour, it offers world-class dining, impeccable service, and luxurious suites designed for ultimate comfort.",
     location: {
@@ -521,14 +657,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Deluxe Room",
         price_per_night: 720,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-07-03", check_out: "2025-07-08" },
+          { check_in: "2025-07-12", check_out: "2025-07-16" },
+        ],
       },
       {
         type: "Harbor View Suite",
         price_per_night: 1400,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-07-05", check_out: "2025-07-10" },
+          { check_in: "2025-07-18", check_out: "2025-07-23" },
+        ],
       },
       {
         type: "Presidential Suite",
         price_per_night: 5000,
+        max_guests: 1,
+        availability: [
+          { check_in: "2025-07-08", check_out: "2025-07-13" },
+          { check_in: "2025-07-25", check_out: "2025-07-30" },
+        ],
       },
     ],
     amenities: [
@@ -545,11 +696,11 @@ export const HotelListTypes: HotelListType[] = [
     reviews: 920,
     book_now_url: "https://www.mandarinoriental.com/hong-kong",
   },
-
   {
     id: 11,
     name: "The Oberoi Udaivilas",
-    image: "https://media.cntraveler.com/photos/5c06e5a701ffc86b13da2528/16:9/w_2560,c_limit/The-Oberoi-Udaivilas,-Udaipur__2018_Premier-Lake-View-Rooms-with-Semi-Private-Pools---The-Oberoi-Udaivilas,-Udaipur-01.jpg",
+    image:
+      "https://media.cntraveler.com/photos/5c06e5a701ffc86b13da2528/16:9/w_2560,c_limit/The-Oberoi-Udaivilas,-Udaipur__2018_Premier-Lake-View-Rooms-with-Semi-Private-Pools---The-Oberoi-Udaivilas,-Udaipur-01.jpg",
     description:
       "The Oberoi Udaivilas is a magnificent palace hotel set on the banks of Lake Pichola, offering breathtaking views and royal Rajasthani hospitality. Featuring grand architecture, luxurious rooms, and exquisite fine dining, it is a perfect destination for a regal retreat.",
     location: {
@@ -562,14 +713,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Premier Room",
         price_per_night: 530,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-01", check_out: "2025-08-06" },
+          { check_in: "2025-08-12", check_out: "2025-08-16" },
+        ],
       },
       {
         type: "Luxury Suite with Private Pool",
         price_per_night: 1200,
+        max_guests: 5,
+        availability: [
+          { check_in: "2025-08-04", check_out: "2025-08-09" },
+          { check_in: "2025-08-18", check_out: "2025-08-23" },
+        ],
       },
       {
         type: "Kohinoor Suite",
         price_per_night: 4500,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-25", check_out: "2025-08-30" },
+        ],
       },
     ],
     amenities: [
@@ -591,7 +757,8 @@ export const HotelListTypes: HotelListType[] = [
   {
     id: 12,
     name: "Fairmont Banff Springs",
-    image: "https://banfflakelouise.bynder.com/m/b1e860e9fd3add0/2000x1080_jpg-2021_FairmontBanffSprings_Winter_Accommodation.jpg",
+    image:
+      "https://banfflakelouise.bynder.com/m/b1e860e9fd3add0/2000x1080_jpg-2021_FairmontBanffSprings_Winter_Accommodation.jpg",
     description:
       "Fairmont Banff Springs, known as the 'Castle in the Rockies,' is a luxurious mountain retreat offering breathtaking views, world-class skiing, and rejuvenating hot springs. Nestled in Banff National Park, this iconic resort combines rustic elegance with modern comforts.",
     location: {
@@ -603,14 +770,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Fairmont Room",
         price_per_night: 380,
+        max_guests: 2,
+        availability: [
+          { check_in: "2025-07-10", check_out: "2025-07-15" },
+          { check_in: "2025-07-20", check_out: "2025-07-25" },
+        ],
       },
       {
         type: "Deluxe Mountain View Room",
         price_per_night: 620,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-07-12", check_out: "2025-07-17" },
+          { check_in: "2025-07-22", check_out: "2025-07-27" },
+        ],
       },
       {
         type: "Fairmont Gold Suite",
         price_per_night: 1600,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-07-15", check_out: "2025-07-20" },
+          { check_in: "2025-07-25", check_out: "2025-07-30" },
+        ],
       },
     ],
     amenities: [
@@ -631,7 +813,8 @@ export const HotelListTypes: HotelListType[] = [
   {
     id: 13,
     name: "The Langham, Melbourne",
-    image: "https://www.langhamhotels.com/content/dam/langhamhotels/dynamicmedia/pacific/the-langham-melbourne-tlmel/home/tlmel-home-did-you-know-hotel-lobby-chandelier.jpg",
+    image:
+      "https://www.langhamhotels.com/content/dam/langhamhotels/dynamicmedia/pacific/the-langham-melbourne-tlmel/home/tlmel-home-did-you-know-hotel-lobby-chandelier.jpg",
     description:
       "The Langham, Melbourne is a sophisticated riverside retreat offering stunning Yarra River views, an indulgent luxury spa, and a world-famous high tea experience. With elegant accommodations and impeccable service, it provides an unforgettable stay in the heart of the city.",
     location: {
@@ -643,14 +826,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Superior Room",
         price_per_night: 460,
+        max_guests: 2,
+        availability: [
+          { check_in: "2025-08-01", check_out: "2025-08-06" },
+          { check_in: "2025-08-10", check_out: "2025-08-15" },
+        ],
       },
       {
         type: "Deluxe River View Room",
         price_per_night: 650,
+        max_guests: 3,
+        availability: [
+          { check_in: "2025-08-05", check_out: "2025-08-10" },
+          { check_in: "2025-08-15", check_out: "2025-08-20" },
+        ],
       },
       {
         type: "Executive Terrace Suite",
         price_per_night: 1800,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
     ],
     amenities: [
@@ -670,7 +868,8 @@ export const HotelListTypes: HotelListType[] = [
   {
     id: 14,
     name: "Rosewood Beijing",
-    image: "https://images.squarespace-cdn.com/content/v1/549d41a3e4b003c6ce131926/1457265614422-6HLP8O947NIQ5YYBN7MJ/image-asset.jpeg?format=1500w",
+    image:
+      "https://images.squarespace-cdn.com/content/v1/549d41a3e4b003c6ce131926/1457265614422-6HLP8O947NIQ5YYBN7MJ/image-asset.jpeg?format=1500w",
     description:
       "Rosewood Beijing is a sophisticated urban sanctuary, blending traditional Chinese aesthetics with modern luxury. Featuring stunning skyline views, spacious suites, and an exquisite culinary experience, this hotel offers unparalleled elegance in the heart of Beijing.",
     location: {
@@ -682,14 +881,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Deluxe Room",
         price_per_night: 500,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
       {
         type: "Executive Suite",
         price_per_night: 950,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
       {
         type: "Manor Suite",
         price_per_night: 2500,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
     ],
     amenities: [
@@ -710,7 +924,8 @@ export const HotelListTypes: HotelListType[] = [
   {
     id: 15,
     name: "Hotel Bel-Air",
-    image: "https://media-cdn.tripadvisor.com/media/photo-s/28/b1/57/e4/the-restaurant-at-hotel.jpg",
+    image:
+      "https://media-cdn.tripadvisor.com/media/photo-s/28/b1/57/e4/the-restaurant-at-hotel.jpg",
     description:
       "Nestled in a secluded canyon, Hotel Bel-Air is an iconic retreat offering timeless Hollywood glamour, lush gardens, and world-class luxury. With an exclusive spa, a serene outdoor pool, and fine dining, it is a sanctuary of elegance in Los Angeles.",
     location: {
@@ -722,14 +937,29 @@ export const HotelListTypes: HotelListType[] = [
       {
         type: "Deluxe Room",
         price_per_night: 750,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
       {
         type: "Bel-Air Suite",
         price_per_night: 1500,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
       {
         type: "Presidential Suite",
         price_per_night: 5000,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
     ],
     amenities: [
@@ -748,116 +978,165 @@ export const HotelListTypes: HotelListType[] = [
       "https://www.dorchestercollection.com/en/los-angeles/hotel-bel-air/",
   },
   {
-    "id": 16,
-    "name": "Signiel Seoul",
-    "image": "https://ik.imgkit.net/3vlqs5axxjf/external/https://www.cfmedia.vfmleonardo.com/imageRepo/6/0/82/974/400/SIGNIEL_SEOUL_1_O.jpg?tr=w-1200%2Cfo-auto",
-    "description": "Located in Lotte World Tower, Signiel Seoul offers breathtaking city views, Michelin-star dining, and world-class luxury in the heart of South Korea’s capital.",
-    "location": {
-      "city": "Seoul",
-      "country": "South Korea",
-      "address": "300 Olympic-ro, Songpa-gu, Seoul, South Korea"
+    id: 16,
+    name: "Signiel Seoul",
+    image:
+      "https://ik.imgkit.net/3vlqs5axxjf/external/https://www.cfmedia.vfmleonardo.com/imageRepo/6/0/82/974/400/SIGNIEL_SEOUL_1_O.jpg?tr=w-1200%2Cfo-auto",
+    description:
+      "Located in Lotte World Tower, Signiel Seoul offers breathtaking city views, Michelin-star dining, and world-class luxury in the heart of South Korea’s capital.",
+    location: {
+      city: "Seoul",
+      country: "South Korea",
+      address: "300 Olympic-ro, Songpa-gu, Seoul, South Korea",
     },
-    "room_types": [
+    room_types: [
       {
-        "type": "Deluxe Room",
-        "price_per_night": 450
+        type: "Deluxe Room",
+        price_per_night: 450,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
       {
-        "type": "Premier Suite",
-        "price_per_night": 1200
+        type: "Premier Suite",
+        price_per_night: 1200,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
       {
-        "type": "Royal Suite",
-        "price_per_night": 5000
-      }
+        type: "Royal Suite",
+        price_per_night: 5000,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
+      },
     ],
-    "amenities": [
+    amenities: [
       "Skyline Views",
       "Infinity Pool",
       "Luxury Spa",
       "Fine Dining",
       "Exclusive Lounge",
       "Fitness Center",
-      "Free Wi-Fi"
+      "Free Wi-Fi",
     ],
-    "rating": 4.8,
-    "reviews": 1100,
-    "book_now_url": "https://www.signielseoul.com"
+    rating: 4.8,
+    reviews: 1100,
+    book_now_url: "https://www.signielseoul.com",
   },
   {
-    "id": 17,
-    "name": "Four Seasons Hotel Seoul",
-    "image": "https://hospitality-on.com/sites/default/files/import/contenu/FourSeasonsSoeul.jpg",
-    "description": "A sophisticated blend of modern luxury and traditional Korean elegance, Four Seasons Hotel Seoul offers top-tier hospitality, award-winning restaurants, and a prime location near Gwanghwamun.",
-    "location": {
-      "city": "Seoul",
-      "country": "South Korea",
-      "address": "97 Saemunan-ro, Jongno-gu, Seoul, South Korea"
+    id: 17,
+    name: "Four Seasons Hotel Seoul",
+    image:
+      "https://hospitality-on.com/sites/default/files/import/contenu/FourSeasonsSoeul.jpg",
+    description:
+      "A sophisticated blend of modern luxury and traditional Korean elegance, Four Seasons Hotel Seoul offers top-tier hospitality, award-winning restaurants, and a prime location near Gwanghwamun.",
+    location: {
+      city: "Seoul",
+      country: "South Korea",
+      address: "97 Saemunan-ro, Jongno-gu, Seoul, South Korea",
     },
-    "room_types": [
+    room_types: [
       {
-        "type": "Premier Room",
-        "price_per_night": 550
+        type: "Premier Room",
+        price_per_night: 550,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
       {
-        "type": "Executive Suite",
-        "price_per_night": 1300
+        type: "Executive Suite",
+        price_per_night: 1300,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
       {
-        "type": "Presidential Suite",
-        "price_per_night": 6000
-      }
+        type: "Presidential Suite",
+        price_per_night: 6000,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
+      },
     ],
-    "amenities": [
+    amenities: [
       "Luxury Spa",
       "Indoor Golf Simulator",
       "Fine Dining",
       "Rooftop Bar",
       "Heated Indoor Pool",
       "Fitness Center",
-      "Free Wi-Fi"
+      "Free Wi-Fi",
     ],
-    "rating": 4.9,
-    "reviews": 1450,
-    "book_now_url": "https://www.fourseasons.com/seoul/"
+    rating: 4.9,
+    reviews: 1450,
+    book_now_url: "https://www.fourseasons.com/seoul/",
   },
   {
-    "id": 18,
-    "name": "The Shilla Seoul",
-    "image": "https://static-new.lhw.com/HotelImages/Final/LW1808/lw1808_59949052_720x450.jpg",
-    "description": "A landmark of Korean hospitality, The Shilla Seoul combines traditional elegance with modern luxury, offering serene gardens, exquisite dining, and a world-class wellness spa.",
-    "location": {
-      "city": "Seoul",
-      "country": "South Korea",
-      "address": "249 Dongho-ro, Jung-gu, Seoul, South Korea"
+    id: 18,
+    name: "The Shilla Seoul",
+    image:
+      "https://static-new.lhw.com/HotelImages/Final/LW1808/lw1808_59949052_720x450.jpg",
+    description:
+      "A landmark of Korean hospitality, The Shilla Seoul combines traditional elegance with modern luxury, offering serene gardens, exquisite dining, and a world-class wellness spa.",
+    location: {
+      city: "Seoul",
+      country: "South Korea",
+      address: "249 Dongho-ro, Jung-gu, Seoul, South Korea",
     },
-    "room_types": [
+    room_types: [
       {
-        "type": "Deluxe Room",
-        "price_per_night": 400
+        type: "Deluxe Room",
+        price_per_night: 400,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
       {
-        "type": "Grand Suite",
-        "price_per_night": 1000
+        type: "Grand Suite",
+        price_per_night: 1000,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
       },
       {
-        "type": "Presidential Suite",
-        "price_per_night": 4500
-      }
+        type: "Presidential Suite",
+        price_per_night: 4500,
+        max_guests: 4,
+        availability: [
+          { check_in: "2025-08-07", check_out: "2025-08-12" },
+          { check_in: "2025-08-17", check_out: "2025-08-22" },
+        ],
+      },
     ],
-    "amenities": [
+    amenities: [
       "Garden Views",
       "Luxury Spa",
       "Michelin-Star Dining",
       "Outdoor Pool",
       "Designer Boutiques",
       "Fitness Center",
-      "Free Wi-Fi"
+      "Free Wi-Fi",
     ],
-    "rating": 4.8,
-    "reviews": 1250,
-    "book_now_url": "https://www.shillahotels.com/seoul"
-  }
-  
-  
+    rating: 4.8,
+    reviews: 1250,
+    book_now_url: "https://www.shillahotels.com/seoul",
+  },
 ];

@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineBedroomChild } from "react-icons/md";
 import Header from "../components/Header";
+import VideoAd from "../components/VideoAd";
+import Footer from "../components/Footer";
 
 const BookingPage = () => {
   const searchParams = useSearchParams();
@@ -60,10 +62,9 @@ const BookingPage = () => {
   return (
     <>
       <Header />
-
       {/* Booking Details Section with Background Video */}
       <section className="relative w-full pt-16">
-        <div className="relative h-40 sm:h-100 flex items-center justify-center text-center ">
+        <div className="relative h-80 sm:h-100 flex items-center justify-center text-center ">
           {/* Background Video */}
           <video
             autoPlay
@@ -81,11 +82,11 @@ const BookingPage = () => {
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40"></div>
 
           {/* Heading */}
-          <div className="relative z-10  text-white max-w-3xl mx-auto space-y-3">
-            <h1 className="text-3xl sm:text-5xl font-bold">
+          <div className="relative z-10  text-white w-full sm:max-w-3xl mx-auto space-y-3 px-3 xs:px-5">
+            <h1 className="text-2xl xxs:text-3xl sm:text-5xl font-bold">
               Secure Your Stay, Embrace the Experience
             </h1>
-            <p className="text-xl">
+            <p className="text-14 xs:text-lg sm:text-xl">
               Effortless booking, exceptional stays—your perfect getaway starts
               here.
             </p>
@@ -93,7 +94,7 @@ const BookingPage = () => {
         </div>
 
         {/* Main Booking Content */}
-        <div className="max-w-6xl mx-auto flex mdl:flex-row flex-col gap-6 px-5 sm:px-10 py-10">
+        <div className="max-w-6xl mx-auto flex mdl:flex-row flex-col gap-6 px-5 sm:px-5 py-10">
           {/* Booking Summary */}
           <div className="bg-gray-100 p-4 rounded-md space-y-4">
             <h2 className="text-xl font-semibold">{hotelName}</h2>
@@ -174,6 +175,8 @@ const BookingPage = () => {
             </button>
           </form>
         </div>
+        <VideoAd videoSrc="https://cdn.pixabay.com/video/2015/10/27/1190-143842655_large.mp4" />
+        <Footer />
       </section>
     </>
   );
