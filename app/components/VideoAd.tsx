@@ -2,7 +2,7 @@ import React from "react";
 
 const VideoAd = ({ videoSrc }: { videoSrc: string }) => {
   return (
-    <div className=" h-100 w-full mb-5">
+    <div className="h-60 xs:h-80 sm:h-100 w-full mb-5">
       {/* Background Video */}
       <video
         autoPlay
