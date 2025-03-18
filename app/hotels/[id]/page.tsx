@@ -11,6 +11,7 @@ import { FaStar, FaStarHalf } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineBedroomChild } from "react-icons/md";
 import Loader from "../../components/Loader";
+import Footer from "@/app/components/Footer";
 
 const HotelDetailsPage = () => {
   const { id } = useParams();
@@ -210,6 +211,7 @@ const HotelDetailsPage = () => {
             </div>
           </div>
         </div>
+        <Footer/>
       </section>
     </>
   );
